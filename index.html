@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Cook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hintergrund-Orbs für fancy Look -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app-wrapper">
+    <header class="app-header">
+      <h1>Mood Cook<span>🍳</span></h1>
+      <p>Wähle deinen Vibe, sag was du da hast – und lass dir das passende Essen ausspucken.</p>
+    </header>
+
+    <nav class="navbar">
+      <button class="nav-btn active" data-view="mood">🎯 Mood Suche</button>
+      <button class="nav-btn" data-view="all">📚 Alle Rezepte</button>
+      <button class="nav-btn" data-view="about">ℹ️ Über Mood Cook</button>
+    </nav>
+
+    <main class="app-card">
+      <!-- Mood-Suche -->
+      <div id="view-mood" class="view">
+        <section class="section-block">
+          <h2>1. Wie fühlst du dich?</h2>
+          <p class="hint">Klick einfach auf die Stimmung, die am ehesten passt.</p>
+          <div id="mood-buttons">
+            <button data-mood="müde">
+              <span class="emoji">😴</span>
+              <span>Müde</span>
+            </button>
+            <button data-mood="gestresst">
+              <span class="emoji">😵‍💫</span>
+              <span>Gestresst</span>
+            </button>
+            <button data-mood="happy">
+              <span class="emoji">😁</span>
+              <span>Happy</span>
+            </button>
+            <button data-mood="neutral">
+              <span class="emoji">😐</span>
+              <span>Neutral</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <h2>2. Was liegt bei dir rum?</h2>
+          <p class="hint">
+            Zutaten mit Kommas trennen, z.&nbsp;B. <code>nudeln, sahne, käse</code> – kannst du auch leer lassen.
+          </p>
+          <label for="ingredients-input" class="field-label">Deine Zutaten (optional)</label>
+          <input
+            type="text"
+            id="ingredients-input"
+            placeholder="nudeln, reis, ei, tomaten, käse, ..."
+          >
+          <div class="actions-row">
+            <button id="find-btn">Filtern nach Zutaten ✨</button>
+            <button id="surprise-btn" class="ghost-btn">Überrasch mich 🎲</button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header-inline">
+            <h2>3. Deine Vorschläge</h2>
+            <span class="section-tag">live aus deiner Küche</span>
+          </div>
+          <div id="results" class="results-placeholder">
+            Wähle zuerst eine Stimmung – du musst keine Zutaten eingeben, außer du willst genauer filtern.
+          </div>
+        </section>
+      </div>
+
+      <!-- Alle Rezepte -->
+      <div id="view-all" class="view" style="display: none;">
+        <section class="section-block">
+          <div class="section-header-inline">
+            <h2>Alle Rezepte</h2>
+            <span class="section-tag">dein kleines Kochbuch</span>
+          </div>
+          <div id="all-recipes"></div>
+        </section>
+      </div>
+
+      <!-- Über-Seite -->
+      <div id="view-about" class="view" style="display: none;">
+        <section class="section-block">
+          <h2>Über Mood Cook</h2>
+          <p>
+            Mood Cook ist eine kleine App, die Kochen weniger stressig machen soll:
+            statt stundenlang Rezepte zu suchen, sagst du einfach, wie du dich fühlst
+            und was du zu Hause hast.
+          </p>
+          <p>
+            Die App versucht dann, Rezepte zu finden, die zu deinem Vibe passen –
+            Comfort Food nach einem miesen Tag, schnelle Sachen nach der Arbeit
+            oder etwas Buntes, wenn du eh schon gute Laune hast.
+          </p>
+          <p>
+            Du kannst in der <strong>app.js</strong> deine eigenen Rezepte eintragen,
+            Bilder hinzufügen und Mood Cook Schritt für Schritt zu deinem persönlichen
+            Kochassistenten machen.
+          </p>
+          <p class="about-note">
+            Idee, Code und Chaos: <span>du</span> 👑
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <span>Made with 🧠 & 🍝 – Mood Cook</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
